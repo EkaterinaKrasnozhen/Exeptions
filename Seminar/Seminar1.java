@@ -45,11 +45,11 @@ public class Seminar1 {
 
     public static int findinArray(int [] arr, int a) {
         int minLength = 6;
-        if (arr.length < minLength) {
-            return -1;
-        }
-        else if (arr == null){
+        if (arr == null){
             return -3;
+        }
+        else if (arr.length < minLength) {
+            return -1;
         }
         for (int index = 0; index < arr.length; index++) {
             if (arr[index] == a) {
