@@ -20,7 +20,7 @@ public class Task1 {
                 userInput = scanner.nextFloat();
                 break;                
             }catch (Exception e){
-                e.getMessage();
+                e.printStackTrace();
                 System.out.println("Неерный формат данных. Введите дробное число: ");
                 scanner.next();    
             }
