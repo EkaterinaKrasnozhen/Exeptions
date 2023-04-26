@@ -13,19 +13,17 @@ public class Task1 {
 
     public static float getFloat() {
         float userInput = 0;
-        try {
-            Scanner scanner = new Scanner(System.in);         
-            System.out.println("Введите дробное число: ");
-            
-            if (!scanner.hasNext()) {
-                throw new IllegalArgumentException("Ошибка ввода числа");
+        Scanner scanner = new Scanner(System.in);         
+        System.out.println("Введите дробное число: ");
+        while (true) {
+            try {
+                userInput = scanner.nextFloat();
+                break;                
+            }catch (Exception e){
+                e.getMessage();
+                System.out.println("Неерный формат данных. Введите дробное число: ");
+                scanner.next();    
             }
-            userInput = scanner.nextFloat();
-            if (userInput == 0.0) {
-                throw new NumberFormatException("0.0 не дробное число");
-            }
-        } catch (Exception e){
-            throw new RuntimeException("неверно введены данные " + e.getMessage());
         }
         return userInput;   
     }
